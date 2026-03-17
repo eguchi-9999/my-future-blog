@@ -37,4 +37,4 @@ document.querySelectorAll('.card').forEach(card => {
     });
 });
 
-console.log('FutureBlog Loaded Successfully');
+console.log('MoguMogu News Loaded Successfully');

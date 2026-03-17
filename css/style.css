@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap');
 
 :root {
-    --bg-color: #0f172a;
-    --surface-color: rgba(30, 41, 59, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --accent-color: #38bdf8;
-    --accent-glow: rgba(56, 189, 248, 0.3);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
+    --bg-color: #fdfbf7;
+    --surface-color: #ffffff;
+    --border-color: #eee0d5;
+    --accent-color: #ff6b6b;
+    --accent-secondary: #ff9f43;
+    --accent-glow: rgba(255, 107, 107, 0.15);
+    --text-primary: #2d3436;
+    --text-secondary: #636e72;
     --transition-speed: 0.3s;
 }
 
@@ -18,14 +19,14 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', 'Noto+Sans+JP', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.7;
     overflow-x: hidden;
 }
 
-/* Background Animation */
+/* Background Elements */
 .bg-blobs {
     position: fixed;
     top: 0;
@@ -34,55 +35,62 @@ body {
     height: 100%;
     z-index: -1;
     overflow: hidden;
-    background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
 }
 
 .blob {
     position: absolute;
-    width: 400px;
-    height: 400px;
-    background: var(--accent-glow);
-    filter: blur(80px);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 159, 67, 0.1) 0%, transparent 70%);
+    filter: blur(50px);
     border-radius: 50%;
-    animation: move 20s infinite alternate;
+    animation: move 25s infinite alternate;
 }
 
 @keyframes move {
-    from { transform: translate(-10%, -10%) scale(1); }
-    to { transform: translate(20%, 20%) scale(1.2); }
+    from { transform: translate(-10%, -10%) rotate(0deg); }
+    to { transform: translate(15%, 15%) rotate(180deg); }
 }
 
 /* Layout */
 header {
-    padding: 2rem 10%;
+    padding: 1.5rem 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(10px);
+    background: rgba(253, 251, 247, 0.8);
+    backdrop-filter: blur(15px);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 800;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.02em;
     color: var(--text-primary);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .logo span {
     color: var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 nav a {
     color: var(--text-secondary);
     text-decoration: none;
     margin-left: 2rem;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     transition: var(--transition-speed);
 }
 
@@ -92,62 +100,79 @@ nav a:hover {
 
 /* Hero */
 .hero {
-    padding: 8rem 10% 4rem;
+    padding: 6rem 10% 4rem;
     text-align: center;
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
-    background: linear-gradient(to right, #fff, var(--accent-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-primary);
+}
+
+.hero h1 span {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 0.5rem;
 }
 
 .hero p {
     font-size: 1.25rem;
     color: var(--text-secondary);
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto 2rem;
 }
 
 /* Blog Grid */
 .container {
-    padding: 4rem 10%;
+    padding: 2rem 10% 6rem;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 3rem;
 }
 
 .card {
     background: var(--surface-color);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
     overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
-    backdrop-filter: blur(5px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px var(--accent-glow);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     border-color: var(--accent-color);
+}
+
+.card-image-wrapper {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
 }
 
 .card-image {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
-    background: #1e293b; /* Placeholder color */
+    transition: transform 0.6s;
+}
+
+.card:hover .card-image {
+    transform: scale(1.05);
 }
 
 .card-content {
@@ -156,25 +181,30 @@ nav a:hover {
 
 .card-tag {
     display: inline-block;
-    padding: 0.25rem 0.75rem;
+    padding: 0.3rem 0.8rem;
     background: var(--accent-glow);
     color: var(--accent-color);
-    border-radius: 100px;
-    font-size: 0.75rem;
-    font-weight: 600;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
     margin-bottom: 1rem;
 }
 
 .card h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 0.75rem;
-    line-height: 1.3;
+    line-height: 1.4;
+    font-weight: 700;
 }
 
 .card p {
     color: var(--text-secondary);
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .card-footer {
@@ -183,22 +213,30 @@ nav a:hover {
     align-items: center;
     color: var(--text-secondary);
     font-size: 0.85rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f5f5f5;
+}
+
+.price {
+    font-weight: 800;
+    color: var(--accent-color);
+    font-size: 1.1rem;
 }
 
 /* Footer */
 footer {
     padding: 4rem 10%;
     text-align: center;
-    border-top: 1px solid var(--glass-border);
+    background: #fff;
+    border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
-    font-size: 0.9rem;
 }
 
 /* Micro-animations */
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 0.8s forwards;
+    transform: translateY(30px);
+    animation: fadeIn 0.8s forwards ease-out;
 }
 
 @keyframes fadeIn {
@@ -207,3 +245,88 @@ footer {
         transform: translateY(0);
     }
 }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    header { padding: 1rem 5%; }
+    .container { padding: 2rem 5%; }
+    .grid { gap: 2rem; }
+}
+
+/* Post Page Styles */
+.post-container {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 5%;
+}
+
+.post-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.post-header h1 {
+    font-size: 3rem;
+    margin: 1rem 0;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+.post-image-hero {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 32px;
+    margin-bottom: 3rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.post-meta {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.post-content {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--text-primary);
+    background: #fff;
+    padding: 3rem;
+    border-radius: 32px;
+    border: 1px solid var(--border-color);
+}
+
+.post-content h2, .post-content h3 {
+    margin: 2.5rem 0 1.5rem;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 3rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition-speed);
+    gap: 0.5rem;
+}
+
+.back-link:hover {
+    color: var(--accent-color);
+    transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+    .post-header h1 { font-size: 2rem; }
+    .post-image-hero { height: 300px; }
+    .post-content { padding: 2rem 1.5rem; }
+}
+

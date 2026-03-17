@@ -3,85 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FutureBlog | 次世代のテックブログ</title>
-    <meta name="description" content="最新のテクノロジーとデザインを融合させた、Cloudflare Pagesで構築された次世代のブログ。">
+    <title>MoguMogu News | コンビニ・外食の新メニュー情報</title>
+    <meta name="description" content="コンビニの新感覚スイーツから、ファミレス・回転寿司の最新メニューまで。今日食べたい「おいしい」が見つかるグルメメディア。">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="bg-blobs">
         <div class="blob" style="top: -10%; left: -10%;"></div>
-        <div class="blob" style="bottom: -10%; right: -10%; background: rgba(147, 51, 234, 0.2);"></div>
+        <div class="blob" style="bottom: -10%; right: -10%;"></div>
     </div>
 
     <header>
-        <a href="#" class="logo">FUTURE<span>BLOG</span></a>
+        <a href="index.html" class="logo">MoguMogu<span>News</span></a>
         <nav>
             <a href="#">Home</a>
-            <a href="#">Articles</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="#">Convenience</a>
+            <a href="#">Restaurant</a>
+            <a href="#">Sushi</a>
         </nav>
     </header>
 
     <section class="hero fade-in">
-        <h1>未来を、<br>書き記す。</h1>
-        <p>最新のテクノロジー、デザイン、そしてWebの未来。Cloudflare Pagesで構築された静的ブログの新しい形。</p>
+        <h1><span>New Arrival</span>最新の「おいしい」を、<br>お届けします。</h1>
+        <p>今週発売のコンビニ新商品から、ファミリーレストランの期間限定メニューまで。最新のグルメトレンドを毎日更新中。</p>
     </section>
 
     <main class="container">
         <div class="grid">
-            <!-- Article 1 -->
+            <!-- Product 1 -->
             <article class="card fade-in" style="animation-delay: 0.1s;" onclick="window.location.href='posts/second-post.html'">
-                <div class="card-image" style="background: linear-gradient(45deg, #f59e0b, #ef4444);"></div>
+                <div class="card-image-wrapper">
+                    <img src="assets/images/matcha_parfait.png" alt="抹茶パフェ" class="card-image">
+                </div>
                 <div class="card-content">
-                    <span class="card-tag">Draft Test</span>
-                    <h3>プレビュー機能で下書きを確認する方法</h3>
-                    <p>この記事はテスト用のブランチで公開されています。プレビューURLでのみ確認可能です。</p>
+                    <span class="card-tag">名店監修</span>
+                    <h3>和の至福。濃厚抹茶と白玉の和風パフェ</h3>
+                    <p>セブン-イレブンから新発売。宇治抹茶を贅沢に使用したムースに、もちもちの白玉をトッピングした贅沢スイーツ。</p>
                     <div class="card-footer">
+                        <span class="price">¥348 (税込)</span>
                         <span>2026.03.18</span>
-                        <span>4 min read</span>
                     </div>
                 </div>
             </article>
 
-            <!-- Article 2 -->
+            <!-- Product 2 -->
             <article class="card fade-in" style="animation-delay: 0.2s;" onclick="window.location.href='posts/first-post.html'">
-                <img src="assets/images/hero.png" alt="テック記事" class="card-image">
+                <div class="card-image-wrapper">
+                    <img src="assets/images/hamburger_steak.png" alt="鉄板ハンバーグ" class="card-image">
+                </div>
                 <div class="card-content">
-                    <span class="card-tag">Cloudflare</span>
-                    <h3>Cloudflare Pagesで始める高速Webサイト作り</h3>
-                    <p>Gitと連携するだけで、世界最速のネットワークにサイトを公開。その驚異的なパフォーマンスと設定方法を解説します。</p>
+                    <span class="card-tag">期間限定</span>
+                    <h3>とろ〜りチーズの厚切り鉄板ハンバーグ</h3>
+                    <p>ガスト春の新メニュー。溢れ出す肉汁と、3種のチーズが絡み合う贅沢な一皿。鉄板でアツアツを提供。</p>
                     <div class="card-footer">
+                        <span class="price">¥890 (税込)</span>
                         <span>2026.03.17</span>
-                        <span>5 min read</span>
                     </div>
                 </div>
             </article>
 
-            <!-- Article 2 -->
-            <article class="card fade-in" style="animation-delay: 0.4s;">
-                <div class="card-image" style="background: linear-gradient(45deg, #4f46e5, #9333ea);"></div>
+            <!-- Product 3 -->
+            <article class="card fade-in" style="animation-delay: 0.3s;">
+                <div class="card-image-wrapper">
+                    <img src="assets/images/tuna_sushi.png" alt="マグロづくし" class="card-image">
+                </div>
                 <div class="card-content">
-                    <span class="card-tag">Design</span>
-                    <h3>モダンなWebデザインの美学：2026年のトレンド</h3>
-                    <p>グラスモルフィズム、ダイナミック・アニメーション、そしてユーザーの心に響くタイポグラフィの秘密。</p>
+                    <span class="card-tag">産地直送</span>
+                    <h3>極上天然マグロ！大とろ・中とろ食べ比べ</h3>
+                    <p>スシローの大満足フェア開催！一皿でとろける脂の甘みを堪能できる、マグロ三昧の期間限定セットです。</p>
                     <div class="card-footer">
+                        <span class="price">¥380 (税込)</span>
                         <span>2026.03.16</span>
-                        <span>8 min read</span>
                     </div>
                 </div>
             </article>
 
-            <!-- Article 3 -->
-            <article class="card fade-in" style="animation-delay: 0.6s;">
-                <div class="card-image" style="background: linear-gradient(45deg, #0ea5e9, #2dd4bf);"></div>
+            <!-- Product 4 -->
+            <article class="card fade-in" style="animation-delay: 0.4s;">
+                <div class="card-image-wrapper">
+                    <img src="assets/images/fried_chicken.png" alt="からあげクン" class="card-image">
+                </div>
                 <div class="card-content">
-                    <span class="card-tag">DevOps</span>
-                    <h3>静的サイト生成(SSG)の新しい選択肢</h3>
-                    <p>なぜ今、モダンなエンジニアは静的サイトを選ぶのか？セキュアでスケーラブルな環境構築のヒント。</p>
+                    <span class="card-tag">ホットスナック</span>
+                    <h3>カリじゅわ！黄金比のからあげクン</h3>
+                    <p>ローソンの定番が進化。特製スパイスと厳選した鶏肉を使用し、外はカリッと中はジューシーな仕上がり。</p>
                     <div class="card-footer">
+                        <span class="price">¥248 (税込)</span>
                         <span>2026.03.15</span>
-                        <span>6 min read</span>
                     </div>
                 </div>
             </article>
@@ -89,7 +97,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 FutureBlog. Powered by Cloudflare Pages.</p>
+        <p>&copy; 2026 MoguMogu News. Delicious updates everyday.</p>
     </footer>
 
     <script src="js/app.js"></script>
